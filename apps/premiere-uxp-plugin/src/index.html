@@ -1,0 +1,7 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="styles.css"></head><body>
+<main><header><h1>Premiere MCP</h1><span id="status" class="badge offline">Disconnected</span></header>
+<section class="card"><div><small>MCP server</small><strong id="server">Unavailable</strong></div><div><small>Project</small><strong id="project">—</strong></div><div><small>Sequence</small><strong id="sequence">—</strong></div></section>
+<section class="controls"><button id="connect">Connect</button><button id="disconnect" class="secondary">Disconnect</button><button id="diagnostics" class="secondary">Run diagnostics</button></section>
+<label class="toggle"><input type="checkbox" id="safeMode" checked> Safe mode (blocks destructive commands)</label>
+<section class="card"><small>Most recent command</small><strong id="command">None</strong><p id="result">Waiting for connection.</p></section>
+<h2>Activity</h2><ol id="activity" aria-live="polite"></ol></main><script src="index.js"></script></body></html>

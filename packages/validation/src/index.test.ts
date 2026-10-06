@@ -1,0 +1,2 @@
+import { describe,expect,it } from 'vitest';import path from 'node:path';import { canonicalAllowedPath,MarkerInputSchema,validateMediaPath } from './index.js';
+describe('validation',()=>{it('rejects unknown marker properties',()=>expect(()=>MarkerInputSchema.parse({name:'A',timeSeconds:1,extra:true})).toThrow());it('blocks traversal',()=>expect(()=>canonicalAllowedPath(path.resolve('outside'),[path.resolve('media')])).toThrow());it('validates extensions',()=>expect(()=>validateMediaPath(path.resolve('media','bad.exe'),[path.resolve('media')])).toThrow());});

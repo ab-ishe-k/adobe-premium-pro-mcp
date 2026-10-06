@@ -1,0 +1,2 @@
+import { PremiereMcpError } from '@premiere-mcp/protocol';
+export class BoundedQueue<T> { private readonly items:T[]=[]; constructor(readonly capacity:number){} enqueue(item:T){if(this.items.length>=this.capacity) throw new PremiereMcpError('BRIDGE_UNAVAILABLE','Bridge queue is full'); this.items.push(item);} dequeue(){return this.items.shift();} get size(){return this.items.length;} drain(){return this.items.splice(0);} }

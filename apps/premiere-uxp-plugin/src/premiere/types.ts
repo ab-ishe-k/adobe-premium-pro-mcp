@@ -1,0 +1,3 @@
+export interface DeferredFeature<I,O>{readonly id:string;readonly status:'unimplemented'|'experimental';execute(input:I):Promise<O>}
+export interface AnalysisInput{mediaPaths:string[];sequenceId?:string} export interface AnalysisOutput{suggestions:Array<{startSeconds:number;endSeconds:number;confidence:number;reason:string}>}
+export type DeferredFeatureId='silence-detection'|'silence-removal'|'speech-to-text'|'caption-styling'|'scene-detection'|'smart-reframing'|'highlight-generation'|'multicamera-editing'|'beat-synchronization'|'b-roll-suggestions'|'editing-recommendations'|'transcript-editing'|'batch-social-exports';

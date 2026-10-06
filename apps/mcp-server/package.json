@@ -1,0 +1,1 @@
+{"name":"@premiere-mcp/server","version":"0.1.0","private":true,"type":"module","main":"dist/index.js","scripts":{"build":"tsc -b","start":"node dist/index.js"},"dependencies":{"@premiere-mcp/protocol":"*","@premiere-mcp/validation":"*","@premiere-mcp/logger":"*","@modelcontextprotocol/server":"^2.0.0","dotenv":"^17.2.1","ws":"^8.18.3","zod":"^4.0.0"}}

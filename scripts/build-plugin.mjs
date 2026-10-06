@@ -1,0 +1,2 @@
+import { cp, mkdir, rm } from 'node:fs/promises'; import path from 'node:path';
+const root=process.cwd(),source=path.join(root,'apps','premiere-uxp-plugin'),target=path.join(source,'dist');await rm(target,{recursive:true,force:true});await mkdir(target,{recursive:true});await cp(path.join(source,'manifest.json'),path.join(target,'manifest.json'));for(const name of ['index.html','index.js','styles.css'])await cp(path.join(source,'src',name),path.join(target,name));console.error(`Built UXP plugin: ${target}`);

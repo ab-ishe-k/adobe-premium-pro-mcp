@@ -1,0 +1,1 @@
+import { rm } from 'node:fs/promises';import { glob } from 'glob';for(const entry of await glob(['apps/*/dist','packages/*/dist','coverage'],{windowsPathsNoEscape:true}))await rm(entry,{recursive:true,force:true});

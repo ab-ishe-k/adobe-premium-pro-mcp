@@ -1,0 +1,4 @@
+import { describe, expect, it } from 'vitest';
+import { validateEditPlan } from '../src/edit-plans.js';
+const plan={version:'1.0',name:'Fast reel',objective:'Tighten opening and add beat marker',createBackup:true,operations:[{id:'trim-1',type:'trim_clip',target:{mediaType:'video',trackIndex:0,itemIndex:0},startSeconds:0,endSeconds:8},{id:'marker-1',type:'add_marker',name:'Beat',comments:'',timeSeconds:2,durationSeconds:0}]};
+describe('edit plans',()=>{it('validates and summarizes deterministic operations',()=>expect(validateEditPlan(plan).summary).toMatchObject({operationCount:2,destructiveCount:1}));it('rejects invalid trim ranges and unknown operations',()=>{expect(()=>validateEditPlan({...plan,operations:[{...plan.operations[0],endSeconds:0}]})).toThrow();expect(()=>validateEditPlan({...plan,operations:[{id:'x',type:'run_shell'}]})).toThrow();});});
